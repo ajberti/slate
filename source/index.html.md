@@ -18,7 +18,7 @@ includes:
 search: true
 ---
 
-# Introduction
+# The Trade API
 
 Welcome to the The Trade API! You can use our API to securely access your customers. The Trade API makes integrating your systems as simple as possible. Connect once to The Trade API, and we handle the rest.
 
@@ -66,9 +66,15 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# Kittens
+# Customer Functions
 
-## Get All Kittens
+## Get All Entities
+## Get a Specific Entity
+
+
+# Trade Functions
+
+## Get All Invoices
 
 ```ruby
 require 'kittn'
@@ -117,11 +123,11 @@ let kittens = api.kittens.get();
 ]
 ```
 
-This endpoint retrieves all kittens.
+This endpoint retrieves all eligible invoices across all customers.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET http://thetradeapi.com/api/invoices`
 
 ### Query Parameters
 
@@ -134,7 +140,7 @@ available | true | If set to false, the result will include kittens that have al
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Get a Specific Kitten
+## Get a Specific Invoice
 
 ```ruby
 require 'kittn'
