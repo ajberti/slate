@@ -1,15 +1,16 @@
 ---
-title: API Reference
+title: The Trade API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
   - ruby
   - python
   - javascript
+  - csharp
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+  - <a href='https://www.thelittlecodingco.com'>The Little Coding Company</a>
 
 includes:
   - errors
@@ -19,11 +20,11 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the The Trade API! You can use our API to securely access your customers. The Trade API makes integrating your systems as simple as possible. Connect once to The Trade API, and we handle the rest.
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+Your customers may use on-premise ERP systems such as SAP and Oracle, they may use cloud systems such as Xero and Dynamics, or they may use spreadsheets or other on-premise technologies. 
 
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+The Trade API in conjunction with Tradeploy cuts the cost of integrations and rapidly increases your path to scale.
 
 # Authentication
 
