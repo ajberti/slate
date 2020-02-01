@@ -661,3 +661,41 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to delete
 
+### HTTP Response Fields
+
+Fields | Description
+------- | ------------
+networkInvoiceUID | A unique identified for an invoice as supplied by a network or uploader
+version | If the content on an invoice changes it must be assigned a new version. The combination of the InvoiceVersion and networkInvoiceUID identified a unique invoice version. If an update to an invoice is uploaded it must have a new invoiceVersion otherwise TTA will ignore the record.
+versionDate | The date of the version applied
+invoiceNumber | Unique number for the invoice. Must be unique for and recognisable by the supplier.
+invoiceId | The Trade API unique id for the invoice
+buyer | A unique identifier for the buyer. Must be a valid TTA company record.
+supplier | A unique identifier for the buyer. Must be a valid TTA company record.
+obligor | A unique identifier for the company who owns the invoice debt. Must be a valid TTA company record.
+currency | 3 Digit ISO Code – GBP, USD, or EUR expected
+issueDate | Invoice creation date (yyyy-mm-dd)
+durDate | Date on which the invoice payment is due (yyyy-mm-dd)
+amount | Original invoice amount in numeric format only. E.g. 1234565.09
+amountPaid | Value of any invoice payments made against this invoice
+dilution | The value of any credits or other dilutions against the invoice
+balanceDue | Current invoice value
+tax | Amount of tax payable
+disputeAmount | Amount disputed by the buyer or obligor
+expected\settlementDate | Date at which the invoice is expected to be fully settled
+reference | Free form value to be used for any additional cross-referencing or reporting purposes
+paidDate | The date at which the invoice was recorded as paid
+siteId | Code to uniquely identify the site location of the buyer invoiced
+cancelled | “Y” or “N” – gives the ability to cancel an invoice
+closeDate | Date on which the invoice is closed (yyyy-mm-dd)
+hash | An optional client specified hash. This can be used as a mechanism for ensuring the integrity of the data contained
+purchaseOrder | Purchase order identifier from the buyer
+purchaseOrderVersion | Version of the purchase order referenced by this invoice
+shipTo | Address where the goods will be shipped
+shipper | Company responsible for shipping the goods
+trackingNumber | Unique identifier to enable tracking of the goods in transit
+paymentMethod |
+juristiction | Country used for tax purposes
+status | Open, Closed, Financed, Disputed
+
+
