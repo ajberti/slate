@@ -20,7 +20,7 @@ search: true
 
 # The Trade API
 
-Welcome to the The Trade API! You can use our API to securely access your customers. The Trade API makes integrating your systems as simple as possible. Connect once to The Trade API, and we handle the rest.
+Welcome to the The Trade API! You can use our API to securely access all of your customers. The Trade API makes integrating your systems as simple as possible. Connect once to The Trade API, and we handle the rest.
 
 Your customers may use on-premise ERP systems such as SAP and Oracle, they may use cloud systems such as Xero and Dynamics, or they may use spreadsheets or other on-premise technologies. 
 
@@ -66,9 +66,9 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# Customer Functions
+# Customer/Company Functions
 
-## Get All Entities
+## Get All Companies
 ```ruby
 require 'kittn'
 
@@ -84,7 +84,7 @@ api.kittens.get()
 ```
 
 ```shell
-curl "http://thetradeapi.com/api/entities"
+curl "http://thetradeapi.com/api/companies"
   -H "Authorization: bearer token"
 ```
 
@@ -99,20 +99,50 @@ let kittens = api.kittens.get();
 
 ```json
 [
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
+   {
+	"name": "bbbbbb",
+	"companyUid": "224234",
+	"registrationNumber": "324234",
+	"legalAddress": {
+		"line1": "address line 1",
+		"line2": "address line 2",
+		"townCity": "my town",
+		"region": "county",
+		"country": "UK",
+		"postCode": "CV64RT",
+			},
+	"billingAddress": {
+		"line1": "address line 1",
+		"line2": "address line 2",
+		"townCity": "my town",
+		"region": "county",
+		"country": "UK",
+		"postCode": "CV64RT",
+			},
+	"active": 1,
+		},
+   {
+	"name": "bbbbbb",
+	"companyUid": "224234",
+	"registrationNumber": "324234",
+	"legalAddress": {
+		"line1": "address line 1",
+		"line2": "address line 2",
+		"townCity": "my town",
+		"region": "county",
+		"country": "UK",
+		"postCode": "CV64RT",
+			},
+	"billingAddress": {
+		"line1": "address line 1",
+		"line2": "address line 2",
+		"townCity": "my town",
+		"region": "county",
+		"country": "UK",
+		"postCode": "CV64RT",
+			},
+	"active": 1,
+		}
 ]
 ```
 
@@ -120,20 +150,20 @@ This endpoint retrieves all eligible invoices across all customers.
 
 ### HTTP Request
 
-`GET http://thetradeapi.com/api/invoices`
+`GET http://thetradeapi.com/api/companies`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+company | all | @Like' search on company name. Use '*' to denote wildcard search
+active | true | If set to false, will return all companies active and inactive
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Get a Specific Entity
+## Get a Specific Company
 ```ruby
 require 'kittn'
 
@@ -163,25 +193,31 @@ let kittens = api.kittens.get();
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+   {
+	"name": "bbbbbb",
+	"companyUid": "224234",
+	"registrationNumber": "324234",
+	"legalAddress": {
+		"line1": "address line 1",
+		"line2": "address line 2",
+		"townCity": "my town",
+		"region": "county",
+		"country": "UK",
+		"postCode": "CV64RT",
+			},
+	"billingAddress": {
+		"line1": "address line 1",
+		"line2": "address line 2",
+		"townCity": "my town",
+		"region": "county",
+		"country": "UK",
+		"postCode": "CV64RT",
+			},
+	"active": 1,
+		}
 ```
 
-This endpoint retrieves all eligible invoices across all customers.
+This endpoint retrieves a single companies details.
 
 ### HTTP Request
 
