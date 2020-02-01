@@ -649,7 +649,7 @@ let max = api.kittens.delete(2);
 }
 ```
 
-This endpoint deletes a specific kitten.
+This endpoint retrieves a specific invoice
 
 ### HTTP Request
 
